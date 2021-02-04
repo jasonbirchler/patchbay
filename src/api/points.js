@@ -110,6 +110,94 @@ const _points = [
         }
     },
     {
+        mode: '',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: '_',
+            channel: '_'
+        }
+    },
+    {
+        mode: '',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: '_',
+            channel: '_'
+        }
+    },
+    {
+        mode: '',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: '_',
+            channel: '_'
+        }
+    },
+    {
+        mode: '',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: '_',
+            channel: '_'
+        }
+    },
+    {
+        mode: '',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: '_',
+            channel: '_'
+        }
+    },
+    {
+        mode: '',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: '_',
+            channel: '_'
+        }
+    },
+    {
+        mode: '',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: '_',
+            channel: '_'
+        }
+    },
+    {
+        mode: '',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: '_',
+            channel: '_'
+        }
+    },
+    {
         mode: 'thru',
         from: {
             device: 'Patchulator',
@@ -154,10 +242,10 @@ const _points = [
         }
     },
     {
-        mode: '',
+        mode: 'thru',
         from: {
-            device: '_',
-            channel: '_'
+            device: 'Mixer',
+            channel: 'HP1'
         },
         to: {
             device: '_',
@@ -165,98 +253,10 @@ const _points = [
         }
     },
     {
-        mode: '',
+        mode: 'thru',
         from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
+            device: 'Mixer',
+            channel: 'HP2'
         },
         to: {
             device: '_',
