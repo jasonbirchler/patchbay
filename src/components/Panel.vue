@@ -65,7 +65,8 @@ export default {
 
 <style scoped>
 main {
-    border: 1px solid black;
+    border: 2px solid #828181;
+    border-radius: 4px;
     padding: 1rem;
     background-color: #ededed;
     overflow-y: auto;
@@ -79,6 +80,7 @@ main {
     padding: 0.5rem;
 }
 .labels {
+    font-weight: 500;
     display: flex;
     flex-direction: column;
     justify-content: center;

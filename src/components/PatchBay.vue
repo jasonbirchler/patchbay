@@ -28,11 +28,6 @@ export default {
 </script>
 
 <style scoped>
-main {
-    border: 1px solid black;
-    padding: 1rem;
-    background-color: #ededed;
-}
 .points {
     display: grid;
     grid-template-columns: repeat(24, 1fr);
