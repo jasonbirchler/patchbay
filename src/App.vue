@@ -28,4 +28,9 @@ h1 {
     font-size: 8rem;
     margin: 0 0 1rem 0;
 }
+@media print {
+    h1 {
+        display: none;
+    }
+}
 </style>

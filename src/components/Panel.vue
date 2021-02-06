@@ -102,4 +102,12 @@ h3 {
     border-radius: 0.25rem;
     margin: 0 0 1rem 0;
 }
+@media print {
+    main {
+        background-color: white;
+    }
+    h3 {
+        background-color: gainsboro;
+    }
+}
 </style>

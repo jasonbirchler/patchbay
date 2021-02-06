@@ -55,8 +55,6 @@ i {
     background-image: url('../assets/input.svg');
     background-position-y: -0.5rem;
 }
-.out i {
-}
 .out.normal i {
     background-image: url('../assets/normal.svg');
     background-position-y: 0.5rem;
