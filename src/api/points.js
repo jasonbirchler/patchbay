@@ -1,193 +1,226 @@
 const _points = [
     {
-        mode: 'normal',
+        mode: 'thru',
         from: {
-            device: 'Norns',
-            channel: 'Out'
+            device: '_',
+            channel: '_'
         },
         to: {
             device: 'Mixer',
-            channel: '5/6'
+            channel: '1'
+        }
+    },
+    {
+        mode: 'thru',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: 'Mixer',
+            channel: '2'
         }
     },
     {
         mode: 'normal',
         from: {
-            device: 'NTS-1',
-            channel: 'Out'
+            device: 'Norns',
+            channel: 'L'
         },
         to: {
             device: 'Mixer',
-            channel: '7/8'
+            channel: '3'
+        }
+    },
+    {
+        mode: 'normal',
+        from: {
+            device: 'Norns',
+            channel: 'R'
+        },
+        to: {
+            device: 'Mixer',
+            channel: '4'
         }
     },
     {
         mode: 'normal',
         from: {
             device: 'Blackbox',
-            channel: 'Phones'
+            channel: 'L'
         },
         to: {
             device: 'Mixer',
-            channel: '9/10'
+            channel: '5'
         }
     },
     {
         mode: 'normal',
         from: {
-            device: 'MicroBrute',
-            channel: 'Out'
+            device: 'Blackbox',
+            channel: 'R'
         },
         to: {
             device: 'Mixer',
-            channel: '11/12'
+            channel: '6'
         }
     },
     {
         mode: 'normal',
         from: {
-            device: 'Pisound',
-            channel: 'Out'
+            device: 'Bluebox',
+            channel: 'L'
         },
         to: {
             device: 'Mixer',
-            channel: '1/2'
+            channel: '7'
         }
     },
     {
         mode: 'normal',
         from: {
-            device: 'iPad',
-            channel: 'Out'
+            device: 'Bluebox',
+            channel: 'R'
         },
         to: {
             device: 'Mixer',
-            channel: '3/4'
-        }
-    },
-    {
-        mode: 'half',
-        from: {
-            device: 'Mixer',
-            channel: 'Aux 2'
-        },
-        to: {
-            device: 'MoFx',
-            channel: 'In'
+            channel: '8'
         }
     },
     {
         mode: 'normal',
         from: {
-            device: 'MoFx',
-            channel: 'Out'
+            device: 'Computer',
+            channel: 'L'
         },
         to: {
             device: 'Mixer',
-            channel: 'Aux Ret'
+            channel: '9'
+        }
+    },
+    {
+        mode: 'normal',
+        from: {
+            device: 'Computer',
+            channel: 'R'
+        },
+        to: {
+            device: 'Mixer',
+            channel: '10'
+        }
+    },
+    {
+        mode: 'normal',
+        from: {
+            device: 'Turntable',
+            channel: 'L'
+        },
+        to: {
+            device: 'Mixer',
+            channel: '11'
+        }
+    },
+    {
+        mode: 'normal',
+        from: {
+            device: 'Turntable',
+            channel: 'R'
+        },
+        to: {
+            device: 'Mixer',
+            channel: '12'
+        }
+    },
+    {
+        mode: 'normal',
+        from: {
+            device: 'MoFX',
+            channel: 'L'
+        },
+        to: {
+            device: 'Mixer',
+            channel: 'Aux Ret 1L'
+        }
+    },
+    {
+        mode: 'normal',
+        from: {
+            device: 'MoFX',
+            channel: 'R'
+        },
+        to: {
+            device: 'Mixer',
+            channel: 'Aux Ret 1R'
+        }
+    },
+    {
+        mode: 'thru',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: 'Mixer',
+            channel: 'Aux Ret 2L'
+        }
+    },
+    {
+        mode: 'thru',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: 'Mixer',
+            channel: 'Aux Ret 2R'
         }
     },
     {
         mode: 'normal',
         from: {
             device: 'Mixer',
-            channel: 'Alt 3/4'
+            channel: 'Aux Send 1'
+        },
+        to: {
+            device: 'MoFX',
+            channel: 'L(mono)'
+        }
+    },
+    {
+        mode: 'thru',
+        from: {
+            device: 'Mixer',
+            channel: 'Aux Send 2'
+        },
+        to: {
+            device: '_',
+            channel: '_'
+        }
+    },
+    {
+        mode: 'normal',
+        from: {
+            device: 'Bluebox',
+            channel: 'Cue L'
         },
         to: {
             device: 'Blackbox',
-            channel: 'In'
+            channel: 'In L'
         }
     },
     {
         mode: 'normal',
         from: {
-            device: 'Mixer',
-            channel: 'Main'
+            device: 'Bluebox',
+            channel: 'Cue R'
         },
         to: {
-            device: 'Speakers',
-            channel: 'In'
+            device: 'Blackbox',
+            channel: 'In R'
         }
     },
     {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: '',
+        mode: 'thru',
         from: {
             device: '_',
             channel: '_'
@@ -200,52 +233,8 @@ const _points = [
     {
         mode: 'thru',
         from: {
-            device: 'Patchulator',
-            channel: '8 Out'
-        },
-        to: {
-            device: 'Patchulator',
-            channel: '8 In'
-        }
-    },
-    {
-        mode: 'thru',
-        from: {
             device: '_',
             channel: '_'
-        },
-        to: {
-            device: 'Norns',
-            channel: 'In'
-        }
-    },
-    {
-        mode: 'thru',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: 'NTS-1',
-            channel: 'In'
-        }
-    },
-    {
-        mode: 'thru',
-        from: {
-            device: 'Mixer',
-            channel: 'CD Out'
-        },
-        to: {
-            device: 'Mixer',
-            channel: 'CD In'
-        }
-    },
-    {
-        mode: 'thru',
-        from: {
-            device: 'Mixer',
-            channel: 'HP1'
         },
         to: {
             device: '_',
@@ -255,8 +244,19 @@ const _points = [
     {
         mode: 'thru',
         from: {
-            device: 'Mixer',
-            channel: 'HP2'
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: '_',
+            channel: '_'
+        }
+    },
+    {
+        mode: 'thru',
+        from: {
+            device: '_',
+            channel: '_'
         },
         to: {
             device: '_',
