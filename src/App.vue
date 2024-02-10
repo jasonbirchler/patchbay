@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <h1>Patchbay</h1>
-        <Patchbay showBack />
+        <Patchbay />
     </div>
 </template>
 

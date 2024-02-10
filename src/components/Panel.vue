@@ -1,10 +1,10 @@
 <template>
     <main :class="[format]">
+        <div class="labels">
+            <p>Out</p>
+            <p>In</p>
+        </div>
         <div class="points">
-            <div class="labels">
-                <p>Out</p>
-                <p>In</p>
-            </div>
             <div
                 :class="['points--pair']"
                 v-for="(item, index) in orderedPatchPoints"
@@ -29,10 +29,6 @@
                     :mode="item.mode"
                     direction="in"
                 />
-            </div>
-            <div class="labels">
-                <p>Out</p>
-                <p>In</p>
             </div>
         </div>
     </main>
@@ -65,13 +61,14 @@ export default {
 
 <style scoped>
 main {
+    display: flex;
+}
+.points {
     border: 2px solid #828181;
     border-radius: 4px;
     padding: 1rem;
     background-color: #ededed;
     overflow-y: auto;
-}
-.points {
     display: flex;
     gap: 2rem;
 }
@@ -85,12 +82,11 @@ main {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    margin-top: 2rem;
 }
-.labels:first-child {
-    padding-left: 1rem;
-}
-.labels:last-child {
-    padding-right: 2rem;
+.labels p {
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
 }
 .labels p:first-child {
     margin-top: 4rem;
