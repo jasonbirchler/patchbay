@@ -1,265 +1,265 @@
 const _points = [
-    {
-        mode: 'thru',
+    { //1
+        mode: 'normal',
         from: {
-            device: '_',
-            channel: '_'
+            device: 'Norns',
+            channel: 'L'
         },
         to: {
-            device: 'Mixer',
+            device: 'MOTU',
+            channel: 'A1'
+        }
+    },
+    { //2
+        mode: 'normal',
+        from: {
+            device: 'Norns',
+            channel: 'R'
+        },
+        to: {
+            device: 'MOTU',
+            channel: 'A2'
+        }
+    },
+    { //3
+        mode: 'normal',
+        from: {
+            device: 'Turntable',
+            channel: 'L'
+        },
+        to: {
+            device: 'MOTU',
+            channel: 'A3'
+        }
+    },
+    { //4
+        mode: 'normal',
+        from: {
+            device: 'Turntable',
+            channel: 'R'
+        },
+        to: {
+            device: 'MOTU',
+            channel: 'A4'
+        }
+    },
+    { //5
+        mode: 'normal',
+        from: {
+            device: 'MoFX',
+            channel: 'L'
+        },
+        to: {
+            device: 'MOTU',
+            channel: 'A5'
+        }
+    },
+    { //6
+        mode: 'normal',
+        from: {
+            device: 'MoFX',
+            channel: 'R'
+        },
+        to: {
+            device: 'MOTU',
+            channel: 'A6'
+        }
+    },
+    { //7
+        mode: 'half',
+        from: {
+            device: 'MOTU',
+            channel: 'A3'
+        },
+        to: {
+            device: 'MoFX',
+            channel: 'L'
+        }
+    },
+    { //8
+        mode: 'half',
+        from: {
+            device: 'MOTU',
+            channel: 'A4'
+        },
+        to: {
+            device: 'MoFX',
+            channel: 'R'
+        }
+    },
+    { //9
+        mode: 'half',
+        from: {
+            device: 'MOTU',
+            channel: 'A5'
+        },
+        to: {
+            device: 'Patchulator',
             channel: '1'
         }
     },
-    {
-        mode: 'thru',
+    { //10
+        mode: 'half',
         from: {
-            device: '_',
-            channel: '_'
+            device: 'MOTU',
+            channel: 'A6'
         },
         to: {
-            device: 'Mixer',
+            device: 'Patchulator',
             channel: '2'
         }
     },
-    {
+    { //11
         mode: 'normal',
         from: {
+            device: 'MOTU',
+            channel: 'A7'
+        },
+        to: {
             device: 'Norns',
-            channel: 'L'
-        },
-        to: {
-            device: 'Mixer',
-            channel: '3'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'Norns',
-            channel: 'R'
-        },
-        to: {
-            device: 'Mixer',
-            channel: '4'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'Blackbox',
-            channel: 'L'
-        },
-        to: {
-            device: 'Mixer',
-            channel: '5'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'Blackbox',
-            channel: 'R'
-        },
-        to: {
-            device: 'Mixer',
-            channel: '6'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'Bluebox',
-            channel: 'L'
-        },
-        to: {
-            device: 'Mixer',
-            channel: '7'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'Bluebox',
-            channel: 'R'
-        },
-        to: {
-            device: 'Mixer',
-            channel: '8'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'Computer',
-            channel: 'L'
-        },
-        to: {
-            device: 'Mixer',
-            channel: '9'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'Computer',
-            channel: 'R'
-        },
-        to: {
-            device: 'Mixer',
-            channel: '10'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'Turntable',
-            channel: 'L'
-        },
-        to: {
-            device: 'Mixer',
-            channel: '11'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'Turntable',
-            channel: 'R'
-        },
-        to: {
-            device: 'Mixer',
-            channel: '12'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'MoFX',
-            channel: 'L'
-        },
-        to: {
-            device: 'Mixer',
-            channel: 'Aux Ret 1L'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'MoFX',
-            channel: 'R'
-        },
-        to: {
-            device: 'Mixer',
-            channel: 'Aux Ret 1R'
-        }
-    },
-    {
-        mode: 'thru',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: 'Mixer',
-            channel: 'Aux Ret 2L'
-        }
-    },
-    {
-        mode: 'thru',
-        from: {
-            device: '_',
-            channel: '_'
-        },
-        to: {
-            device: 'Mixer',
-            channel: 'Aux Ret 2R'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'Mixer',
-            channel: 'Aux Send 1'
-        },
-        to: {
-            device: 'MoFX',
-            channel: 'L(mono)'
-        }
-    },
-    {
-        mode: 'thru',
-        from: {
-            device: 'Mixer',
-            channel: 'Aux Send 2'
-        },
-        to: {
-            device: '_',
-            channel: '_'
-        }
-    },
-    {
-        mode: 'normal',
-        from: {
-            device: 'Bluebox',
-            channel: 'Cue L'
-        },
-        to: {
-            device: 'Blackbox',
             channel: 'In L'
         }
     },
-    {
+    { //12
         mode: 'normal',
         from: {
-            device: 'Bluebox',
-            channel: 'Cue R'
+            device: 'MOTU',
+            channel: 'A8'
         },
         to: {
-            device: 'Blackbox',
-            channel: 'In R'
+            device: 'Norns',
+            channel: 'In L'
         }
     },
-    {
+    { //13
         mode: 'thru',
         from: {
             device: '_',
             channel: '_'
         },
         to: {
-            device: '_',
-            channel: '_'
+            device: '[ADAT]',
+            channel: '1'
         }
     },
-    {
+    { //14
         mode: 'thru',
         from: {
             device: '_',
             channel: '_'
         },
         to: {
-            device: '_',
-            channel: '_'
+            device: '[ADAT]',
+            channel: '2'
         }
     },
-    {
+    { //15
         mode: 'thru',
         from: {
             device: '_',
             channel: '_'
         },
         to: {
-            device: '_',
-            channel: '_'
+            device: '[ADAT]',
+            channel: '3'
         }
     },
-    {
+    { //16
         mode: 'thru',
         from: {
             device: '_',
             channel: '_'
         },
         to: {
+            device: '[ADAT]',
+            channel: '4'
+        }
+    },
+    { //17
+        mode: 'thru',
+        from: {
             device: '_',
+            channel: '_'
+        },
+        to: {
+            device: '[ADAT]',
+            channel: '5'
+        }
+    },
+    { //18
+        mode: 'thru',
+        from: {
+            device: '_',
+            channel: '_'
+        },
+        to: {
+            device: '[ADAT]',
+            channel: '6'
+        }
+    },
+    { //19
+        mode: 'normal',
+        from: {
+            device: 'MSG',
+            channel: 'Out'
+        },
+        to: {
+            device: '[ADAT]',
+            channel: '7'
+        }
+    },
+    { //20
+        mode: 'normal',
+        from: {
+            device: 'Elmyra',
+            channel: 'Out'
+        },
+        to: {
+            device: '[ADAT]',
+            channel: '8'
+        }
+    },
+    { //21
+        mode: 'thru',
+        from: {
+            device: '[ADAT]',
+            channel: '1'
+        },
+        to: {
+            device: 'Patchulator',
+            channel: '_'
+        }
+    },
+    { //22
+        mode: 'thru',
+        from: {
+            device: '[ADAT]',
+            channel: '2'
+        },
+        to: {
+            device: 'Patchulator',
+            channel: '_'
+        }
+    },
+    { //23
+        mode: 'thru',
+        from: {
+            device: '[ADAT]',
+            channel: '3'
+        },
+        to: {
+            device: 'Patchulator',
+            channel: '_'
+        }
+    },
+    { //24
+        mode: 'thru',
+        from: {
+            device: '[ADAT]',
+            channel: '4'
+        },
+        to: {
+            device: 'Patchulator',
             channel: '_'
         }
     }
