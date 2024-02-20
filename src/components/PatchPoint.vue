@@ -1,7 +1,8 @@
 <template>
     <div :class="['point', direction, connector, mode, channel]">
         <i></i>
-        <h4>{{ device }}<br />{{ channel }}</h4>
+        <h4>{{ device }}</h4>
+        <h4>{{ channel }}</h4>
     </div>
 </template>
 
