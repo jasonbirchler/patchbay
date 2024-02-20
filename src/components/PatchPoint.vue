@@ -1,8 +1,8 @@
 <template>
     <div :class="['point', direction, connector, mode, channel]">
         <i></i>
-        <h4>{{ device }}</h4>
-        <h4>{{ channel }}</h4>
+        <h4 contenteditable="true" @keydown.enter="saveDevice">{{ editableDevice }}</h4>
+        <h4 contenteditable="true" @input="saveChannel">{{ editableChannel }}</h4>
     </div>
 </template>
 
@@ -15,6 +15,22 @@ export default {
         mode: { type: String, default: '' },
         channel: { type: String, default: '0' },
         device: { type: String, default: 'default' }
+    },
+    data() {
+        return {
+            editableChannel: this.channel,
+            editableDevice: this.device
+        }
+    },
+    methods: {
+        saveChannel(event) {
+            event.target.blur();
+            this.editableChannel = event.target.innerText;
+        },
+        saveDevice(event) {
+            event.target.blur();
+            this.editableDevice = event.target.innerText;
+        }
     }
 };
 </script>
@@ -24,6 +40,12 @@ h4 {
     text-align: center;
     margin: 0;
     white-space: nowrap;
+    padding: 0.25rem;
+    border-radius: 4px;
+}
+h4:hover {
+    cursor: pointer;
+    background-color: #c1dfe1;
 }
 .point {
     display: flex;
