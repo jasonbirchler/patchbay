@@ -6,33 +6,34 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'PatchPoint',
-    props: {
-        direction: { type: String, default: '' },
-        connector: { type: String, default: 'trs' },
-        mode: { type: String, default: '' },
-        channel: { type: String, default: '0' },
-        device: { type: String, default: 'default' }
+<script setup>
+import {ref} from 'vue';
+
+const props = defineProps({
+    direction: {
+        type: String,
+        default: ''
     },
-    data() {
-        return {
-            editableChannel: this.channel,
-            editableDevice: this.device
-        }
+    connector: { 
+        type: String, 
+        default: 'trs' 
     },
-    methods: {
-        saveChannel(event) {
-            event.target.blur();
-            this.editableChannel = event.target.innerText;
-        },
-        saveDevice(event) {
-            event.target.blur();
-            this.editableDevice = event.target.innerText;
-        }
+    channel: {
+        type: String,
+        default: '0'
+    },
+    mode: {
+        type: String,
+        default: ''
+    },
+    device: {
+        type: String,
+        default: 'default'
     }
-};
+});
+
+const editableChannel = ref(props.channel);
+const editableDevice = ref(props.device);
 </script>
 
 <style scoped>

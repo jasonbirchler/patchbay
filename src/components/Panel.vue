@@ -34,29 +34,20 @@
     </main>
 </template>
 
-<script>
-import PatchPoint from './PatchPoint';
+<script setup>
+import { computed } from 'vue';
+import PatchPoint from './PatchPoint.vue';
 
-export default {
-    name: 'Panel',
-    components: {
-        PatchPoint
-    },
-    props: {
-        format: { type: String, default: 'rack' },
-        patchPoints: { type: Array, required: true },
-        reverseOrder: { type: Boolean, default: false }
-    },
-    computed: {
-        orderedPatchPoints() {
-            if (this.reverseOrder) {
-                return this.patchPoints.slice().reverse();
-            }
+const props = defineProps({
+    format: { type: String, default: 'rack' },
+    patchPoints: { type: Array },
+    reverseOrder: { type: Boolean, default: false }
+});
 
-            return this.patchPoints;
-        }
-    }
-};
+const orderedPatchPoints = computed(() => {
+    console.log("ro:", props.reverseOrder);
+    return props.reverseOrder ? props.patchPoints.slice().reverse() : props.patchPoints;
+});
 </script>
 
 <style scoped>
