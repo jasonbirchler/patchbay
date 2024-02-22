@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import PatchPoint from './PatchPoint';
+import PatchPoint from './PatchPoint.vue';
 
 export default {
     name: 'Panel',

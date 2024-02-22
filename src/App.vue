@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Patchbay from './components/PatchBay';
+import Patchbay from '@/components/PatchBay.vue';
 
 export default {
     name: 'App',

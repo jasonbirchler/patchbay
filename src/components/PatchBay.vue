@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Panel from './Panel';
+import Panel from './Panel.vue';
 import pointData from '../api/points';
 
 export default {
