@@ -8,22 +8,13 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
 import Panel from './Panel.vue';
 import pointData from '../api/points';
 
-export default {
-    name: 'PatchBay',
-    components: {
-        Panel
-    },
-    data() {
-        return {
-            patchPoints: pointData,
-            showBack: false
-        };
-    }
-};
+const patchPoints = ref(pointData);
+const showBack = ref(false);
 </script>
 
 <style scoped>

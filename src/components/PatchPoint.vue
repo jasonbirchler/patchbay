@@ -1,21 +1,34 @@
 <template>
     <div :class="['point', direction, connector, mode, channel]">
         <i></i>
-        <h4>{{ device }}<br />{{ channel }}</h4>
+        <h4>{{ device }}</h4>
+        <h4>{{ channel }}</h4>
     </div>
 </template>
 
-<script>
-export default {
-    name: 'PatchPoint',
-    props: {
-        direction: { type: String, default: '' },
-        connector: { type: String, default: 'trs' },
-        mode: { type: String, default: '' },
-        channel: { type: String, default: '0' },
-        device: { type: String, default: 'default' }
+<script setup>
+const props = defineProps({
+    direction: {
+        type: String,
+        default: ''
+    },
+    connector: { 
+        type: String, 
+        default: 'trs' 
+    },
+    channel: {
+        type: String,
+        default: '0'
+    },
+    mode: {
+        type: String,
+        default: ''
+    },
+    device: {
+        type: String,
+        default: 'default'
     }
-};
+});
 </script>
 
 <style scoped>
