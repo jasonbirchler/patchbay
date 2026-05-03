@@ -1,8 +1,8 @@
 <template>
     <div :class="['point', direction, connector, mode, channel]">
         <i></i>
-        <h4 contenteditable="true" @input="updateDevice" @blur="saveDevice">{{ editableDevice }}</h4>
-        <h4 contenteditable="true" @input="updateChannel" @blur="saveChannel">{{ editableChannel }}</h4>
+        <h4 contenteditable="true" @blur="saveDevice">{{ editableDevice }}</h4>
+        <h4 contenteditable="true" @blur="saveChannel">{{ editableChannel }}</h4>
     </div>
 </template>
 
@@ -41,34 +41,30 @@ const emit = defineEmits(['point-update']);
 const editableChannel = ref(props.channel);
 const editableDevice = ref(props.device);
 
-function updateDevice(event) {
-    editableDevice.value = event.target.textContent;
-}
-
-function updateChannel(event) {
-    editableChannel.value = event.target.textContent;
-}
-
-function saveDevice() {
+function saveDevice(event) {
+    const value = event.target.textContent;
+    editableDevice.value = value;
     if (props.index !== null) {
         const field = props.direction === 'out' ? 'from' : 'to';
         emit('point-update', {
             index: props.index,
             field: field,
             subfield: 'device',
-            value: editableDevice.value
+            value: value
         });
     }
 }
 
-function saveChannel() {
+function saveChannel(event) {
+    const value = event.target.textContent;
+    editableChannel.value = value;
     if (props.index !== null) {
         const field = props.direction === 'out' ? 'from' : 'to';
         emit('point-update', {
             index: props.index,
             field: field,
             subfield: 'channel',
-            value: editableChannel.value
+            value: value
         });
     }
 }
