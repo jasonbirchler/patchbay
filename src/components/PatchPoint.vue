@@ -1,13 +1,13 @@
 <template>
     <div :class="['point', direction, connector, mode, channel]">
         <i></i>
-        <h4 contenteditable="true" @keydown.enter="saveDevice">{{ editableDevice }}</h4>
-        <h4 contenteditable="true" @input="saveChannel">{{ editableChannel }}</h4>
+        <h4 contenteditable="true" @input="updateDevice" @blur="saveDevice">{{ editableDevice }}</h4>
+        <h4 contenteditable="true" @input="updateChannel" @blur="saveChannel">{{ editableChannel }}</h4>
     </div>
 </template>
 
 <script setup>
-import {ref} from 'vue';
+import { ref } from 'vue';
 
 const props = defineProps({
     direction: {
@@ -29,11 +29,49 @@ const props = defineProps({
     device: {
         type: String,
         default: 'default'
+    },
+    index: {
+        type: Number,
+        default: null
     }
 });
 
+const emit = defineEmits(['point-update']);
+
 const editableChannel = ref(props.channel);
 const editableDevice = ref(props.device);
+
+function updateDevice(event) {
+    editableDevice.value = event.target.textContent;
+}
+
+function updateChannel(event) {
+    editableChannel.value = event.target.textContent;
+}
+
+function saveDevice() {
+    if (props.index !== null) {
+        const field = props.direction === 'out' ? 'from' : 'to';
+        emit('point-update', {
+            index: props.index,
+            field: field,
+            subfield: 'device',
+            value: editableDevice.value
+        });
+    }
+}
+
+function saveChannel() {
+    if (props.index !== null) {
+        const field = props.direction === 'out' ? 'from' : 'to';
+        emit('point-update', {
+            index: props.index,
+            field: field,
+            subfield: 'channel',
+            value: editableChannel.value
+        });
+    }
+}
 </script>
 
 <style scoped>

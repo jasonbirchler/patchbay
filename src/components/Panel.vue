@@ -21,13 +21,17 @@
                     :device="item.from.device"
                     :channel="item.from.channel"
                     :mode="item.mode"
+                    :index="getOriginalIndex(index)"
                     direction="out"
+                    @point-update="handlePointUpdate"
                 />
                 <PatchPoint
                     :device="item.to.device"
                     :channel="item.to.channel"
                     :mode="item.mode"
+                    :index="getOriginalIndex(index)"
                     direction="in"
+                    @point-update="handlePointUpdate"
                 />
             </div>
         </div>
@@ -44,10 +48,23 @@ const props = defineProps({
     reverseOrder: { type: Boolean, default: false }
 });
 
+const emit = defineEmits(['point-update']);
+
 const orderedPatchPoints = computed(() => {
     console.log("ro:", props.reverseOrder);
     return props.reverseOrder ? props.patchPoints.slice().reverse() : props.patchPoints;
 });
+
+function getOriginalIndex(displayIndex) {
+    if (props.reverseOrder) {
+        return props.patchPoints.length - 1 - displayIndex;
+    }
+    return displayIndex;
+}
+
+function handlePointUpdate(payload) {
+    emit('point-update', payload);
+}
 </script>
 
 <style scoped>

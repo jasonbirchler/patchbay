@@ -266,3 +266,21 @@ const _points = [
 ];
 
 export default _points;
+
+const STORAGE_KEY = 'patchbay-points';
+
+export function loadPoints() {
+    try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+            return JSON.parse(stored);
+        }
+    } catch (e) {
+        console.warn('Failed to load points from localStorage:', e);
+    }
+    return _points.map(p => ({ ...p }));
+}
+
+export function savePoints(points) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(points));
+}

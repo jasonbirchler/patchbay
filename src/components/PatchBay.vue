@@ -4,17 +4,35 @@
             <button @click="showBack = false" :class="{active: !showBack}">Front</button>
             <button @click="showBack = true" :class="{active: showBack}">Rear</button>
         </div>
-        <Panel :patchPoints="patchPoints" :reverseOrder="showBack"/>
+        <Panel :patchPoints="patchPoints" :reverseOrder="showBack" @point-update="handlePointUpdate"/>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import Panel from './Panel.vue';
-import pointData from '../api/points';
+import { loadPoints, savePoints } from '../api/points';
+import _points from '../api/points';
 
-const patchPoints = ref(pointData);
+const points = loadPoints();
+const patchPoints = ref([...points]);
 const showBack = ref(false);
+
+function savePoint(index, field, value, subfield = null) {
+    const point = { ...patchPoints.value[index] };
+    if (subfield) {
+        point[field] = { ...point[field], [subfield]: value };
+    } else {
+        point[field] = value;
+    }
+    patchPoints.value[index] = point;
+    savePoints(patchPoints.value);
+}
+
+function handlePointUpdate(payload) {
+    const { index, field, value, subfield } = payload;
+    savePoint(index, field, value, subfield);
+}
 </script>
 
 <style scoped>
