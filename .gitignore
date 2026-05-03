@@ -105,3 +105,6 @@ dist
 
 # Mac resource files
 .DS_Store
+
+# Coding Agent files
+.kilo
